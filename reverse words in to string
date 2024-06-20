@@ -1,0 +1,31 @@
+Given a string, the task is to reverse the order of the words in the given string.  
+SOLUTION:-
+
+
+public class ReverseWords {
+
+    public static String reverseWords(String s) {
+
+        String[] words = s.trim().split("\\s+");
+
+
+        StringBuilder reversed = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversed.append(words[i]);
+            if (i > 0) {
+                reversed.append(" ");
+            }
+        }
+
+        return reversed.toString();
+    }
+
+    public static void main(String[] args) {
+        String input = "the task is to reverse the order of the words";
+        String reversedWords = reverseWords(input);
+        System.out.println("Original string: " + input);
+        System.out.println("Reversed string: " + reversedWords);
+    }
+}
+
+
